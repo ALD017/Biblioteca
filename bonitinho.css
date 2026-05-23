@@ -1,0 +1,889 @@
+/* ========== RESET E BASE ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #d4e4d4;
+            min-height: 100vh;
+        }
+
+        /* ========== SISTEMA DE NAVEGAÇÃO POR ÂNCORAS ========== */
+        .page {
+            display: none;
+            min-height: 100vh;
+        }
+
+        /* Página padrão (login) */
+        .page:first-of-type {
+            display: block;
+        }
+
+        /* Mostra a página alvo */
+        .page:target {
+            display: block;
+        }
+
+        /* Esconde outras páginas quando uma é alvo */
+        .page:target ~ .page,
+        .page:has(~ .page:target) {
+            display: none;
+        }
+
+        /* ========== HEADER ========== */
+        .header {
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
+            gap: 15px;
+        }
+
+        .menu-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .menu-btn span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: #2d5a2d;
+            border-radius: 2px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .logo i {
+            color: #2d5a2d;
+            font-size: 24px;
+        }
+
+        .logo-text {
+            font-size: 10px;
+            color: #2d5a2d;
+            font-weight: bold;
+        }
+
+        /* ========== SIDEBAR ========== */
+        .sidebar {
+            position: fixed;
+            left: -280px;
+            top: 0;
+            width: 280px;
+            height: 100vh;
+            background-color: #2d5a2d;
+            z-index: 1000;
+            padding: 20px;
+            transition: left 0.3s ease;
+        }
+
+        .sidebar:target {
+            left: 0;
+        }
+
+        .sidebar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .sidebar-title {
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .close-btn {
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+        }
+
+        .sidebar-menu {
+            list-style: none;
+        }
+
+        .sidebar-menu li {
+            margin-bottom: 15px;
+        }
+
+        .sidebar-menu a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px;
+            border-radius: 8px;
+            transition: background 0.2s;
+        }
+
+        .sidebar-menu a:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+
+        .sidebar-menu i {
+            width: 20px;
+            text-align: center;
+        }
+
+        .sidebar-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 999;
+        }
+
+        .sidebar:target + .sidebar-overlay {
+            display: block;
+        }
+
+        /* ========== LOGIN PAGE ========== */
+        .login-container {
+            display: flex;
+            min-height: calc(100vh - 70px);
+        }
+
+        .login-left {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .login-title {
+            font-size: 36px;
+            font-weight: bold;
+            color: #2d5a2d;
+            margin-bottom: 40px;
+            font-family: 'Georgia', serif;
+        }
+
+        .login-form {
+            max-width: 300px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            color: #333;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 8px;
+            background-color: #2d5a2d;
+            color: white;
+            font-size: 14px;
+        }
+
+        .form-group input::placeholder {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .login-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            transition: opacity 0.2s;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        .btn-dark {
+            background-color: #1a3a1a;
+            color: white;
+        }
+
+        .btn-light {
+            background-color: #4a7a4a;
+            color: white;
+        }
+
+        .btn-primary {
+            background-color: #4a7a4a;
+            color: white;
+        }
+
+        .btn-secondary {
+            background-color: #e8e8e8;
+            color: #333;
+        }
+
+        .btn-success {
+            background-color: #2d5a2d;
+            color: white;
+        }
+
+        .btn-danger {
+            background-color: #8b0000;
+            color: white;
+        }
+
+        .login-right {
+            flex: 1;
+            background-color: #2d5a2d;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+        }
+
+        .decorative-shape {
+            position: absolute;
+            top: 0;
+            left: -50px;
+            width: 200px;
+            height: 100%;
+            background-color: #1a3a1a;
+            border-radius: 0 100px 100px 0;
+        }
+
+        .student-image {
+            position: relative;
+            z-index: 1;
+            max-width: 80%;
+            height: auto;
+        }
+
+        /* ========== CADASTRO PAGE ========== */
+        .cadastro-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(100vh - 70px);
+            background-color: #2d5a2d;
+        }
+
+        .cadastro-box {
+            text-align: center;
+            padding: 40px;
+        }
+
+        .cadastro-title {
+            color: white;
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 40px;
+            font-family: 'Georgia', serif;
+        }
+
+        .cadastro-buttons {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .cadastro-btn {
+            padding: 15px 40px;
+            background-color: #e8e8e8;
+            color: #333;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.2s;
+        }
+
+        .cadastro-btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* ========== FORMULÁRIO DE CADASTRO ========== */
+        .form-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(100vh - 70px);
+            background-color: #2d5a2d;
+            padding: 40px;
+        }
+
+        .form-box {
+            background-color: #d4e4d4;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .form-title {
+            color: #2d5a2d;
+            font-size: 28px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 30px;
+            font-family: 'Georgia', serif;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-grid .form-group.full-width {
+            grid-column: span 2;
+        }
+
+        .form-actions {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 20px;
+        }
+
+        /* ========== DASHBOARD ========== */
+        .dashboard-container {
+            display: flex;
+            min-height: calc(100vh - 70px);
+        }
+
+        .dashboard-left {
+            flex: 1;
+            padding: 30px;
+        }
+
+        .search-box {
+            background-color: white;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .search-suggestions {
+            margin-top: 10px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .nav-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .nav-btn {
+            padding: 15px 30px;
+            background-color: #2d5a2d;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            width: fit-content;
+            transition: background 0.2s;
+        }
+
+        .nav-btn:hover {
+            background-color: #1a3a1a;
+        }
+
+        .dashboard-right {
+            width: 300px;
+            background-color: #2d5a2d;
+            padding: 30px;
+            position: relative;
+        }
+
+        .user-panel {
+            text-align: right;
+            color: white;
+        }
+
+        .user-panel-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .logout-link {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 20px;
+            justify-content: flex-end;
+        }
+
+        .user-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #87CEEB, #90EE90);
+        }
+
+        .user-details {
+            text-align: right;
+        }
+
+        .user-name {
+            font-weight: bold;
+            color: white;
+        }
+
+        .user-role {
+            font-size: 12px;
+            color: rgba(255,255,255,0.8);
+        }
+
+        /* ========== ADMIN PAGE ========== */
+        .admin-container {
+            display: flex;
+            min-height: calc(100vh - 70px);
+        }
+
+        .admin-sidebar {
+            width: 250px;
+            background-color: #2d5a2d;
+            padding: 30px 20px;
+        }
+
+        .admin-sidebar-title {
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            font-family: 'Georgia', serif;
+        }
+
+        .admin-menu {
+            list-style: none;
+        }
+
+        .admin-menu li {
+            margin-bottom: 15px;
+        }
+
+        .admin-menu a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 8px;
+            border-radius: 8px;
+            transition: background 0.2s;
+        }
+
+        .admin-menu a:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+
+        .admin-content {
+            flex: 1;
+            padding: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .admin-cards {
+            display: flex;
+            gap: 30px;
+        }
+
+        .admin-card {
+            width: 200px;
+            height: 150px;
+            background-color: #2d5a2d;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            transition: transform 0.2s;
+        }
+
+        .admin-card:hover {
+            transform: scale(1.05);
+        }
+
+        /* ========== PAGE CONTENT ========== */
+        .page-content {
+            padding: 30px;
+        }
+
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .page-title {
+            font-size: 28px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* ========== SEARCH BAR ========== */
+        .search-bar {
+            display: flex;
+            align-items: center;
+            background-color: white;
+            border-radius: 25px;
+            padding: 10px 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .search-bar i {
+            color: #666;
+            margin-right: 10px;
+        }
+
+        .search-bar input {
+            border: none;
+            outline: none;
+            flex: 1;
+            font-size: 14px;
+        }
+
+        /* ========== GÊNEROS ========== */
+        .genre-btn {
+            display: block;
+            padding: 15px 30px;
+            background-color: #2d5a2d;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            margin-bottom: 15px;
+            width: fit-content;
+            transition: background 0.2s;
+        }
+
+        .genre-btn:hover {
+            background-color: #1a3a1a;
+        }
+
+        .genre-tag {
+            display: inline-block;
+            padding: 8px 20px;
+            background-color: #2d5a2d;
+            color: white;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-right: 10px;
+        }
+
+        /* ========== CARDS ========== */
+        .card-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .card-avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #87CEEB, #90EE90);
+            flex-shrink: 0;
+        }
+
+        .card-image {
+            width: 100px;
+            height: 140px;
+            border-radius: 8px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .card-content {
+            flex: 1;
+        }
+
+        .card-name {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .card-info {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 3px;
+        }
+
+        .card-info strong {
+            color: #333;
+        }
+
+        .card-actions {
+            display: flex;
+            gap: 10px;
+            flex-direction: column;
+        }
+
+        .card-btn {
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+        }
+
+        .card-btn-primary {
+            background-color: #4a7a4a;
+            color: white;
+        }
+
+        .card-btn-secondary {
+            background-color: #e8e8e8;
+            color: #333;
+        }
+
+        .status-badge {
+            padding: 8px 20px;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .status-pending {
+            background-color: #8b0000;
+            color: white;
+        }
+
+        .status-approved {
+            background-color: #2d5a2d;
+            color: white;
+        }
+
+        .monitor-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 5px 15px;
+            background-color: #e8e8e8;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        /* ========== DETAIL CARD ========== */
+        .detail-container {
+            padding: 30px;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #2d5a2d;
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .detail-card {
+            background-color: #4a7a4a;
+            border-radius: 20px;
+            padding: 30px;
+            color: white;
+            max-width: 500px;
+        }
+
+        .detail-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .detail-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #87CEEB, #90EE90);
+            flex-shrink: 0;
+        }
+
+        .detail-info p {
+            margin-bottom: 10px;
+        }
+
+        .detail-info strong {
+            color: white;
+        }
+
+        .detail-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .detail-btn {
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            border: none;
+        }
+
+        .detail-btn-light {
+            background-color: #e8e8e8;
+            color: #333;
+        }
+
+        /* ========== BOOK CARD ========== */
+        .book-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 20px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .book-cover {
+            width: 120px;
+            height: 180px;
+            border-radius: 8px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .book-info {
+            flex: 1;
+        }
+
+        .book-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .book-author,
+        .book-status {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .book-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 768px) {
+            .login-container,
+            .dashboard-container,
+            .admin-container {
+                flex-direction: column;
+            }
+
+            .login-right {
+                display: none;
+            }
+
+            .dashboard-right {
+                width: 100%;
+            }
+
+            .admin-sidebar {
+                width: 100%;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-grid .form-group.full-width {
+                grid-column: span 1;
+            }
+
+            .admin-cards {
+                flex-direction: column;
+            }
+
+            .cadastro-buttons {
+                flex-direction: column;
+            }
+        }

@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Virtual</title>
+    <link rel="stylesheet" href="bonitinho.css">
+
+    </head>
+<body>
+
+    <!-- ========== SIDEBAR ========== -->
+    <nav class="sidebar" id="menu">
+        <div class="sidebar-header">
+            <span class="sidebar-title">CONFIGURAÇÃO</span>
+            <a href="#" class="close-btn">&times;</a>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="#cadastro"><i class="fas fa-user-plus"></i> Adicionar conta</a></li>
+            <li><a href="#usuarios"><i class="fas fa-users"></i> Alunos</a></li>
+            <li><a href="#livros"><i class="fas fa-book"></i> Livros</a></li>
+            <li><a href="#reservas"><i class="fas fa-calendar"></i> Reservas</a></li>
+            <li><a href="#editoras"><i class="fas fa-building"></i> Cadastrar editora</a></li>
+            <li><a href="#dashboard"><i class="fas fa-home"></i> Início</a></li>
+        </ul>
+    </nav>
+    <a href="#" class="sidebar-overlay"></a>
+
+    <!-- ========== LOGIN PAGE ========== -->
+    <section class="page" id="login">
+        <header class="header">
+            <a href="#menu" class="menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+            <div class="logo">
+                <i class="fas fa-book-open"></i>
+                <span class="logo-text">BIBLIOTECA<br>VIRTUAL</span>
+            </div>
+        </header>
+
+        <div class="login-container">
+            <div class="login-left">
+                <h1 class="login-title">BIBLIOTECA VIRTUAL</h1>
+                <form class="login-form">
+                    <div class="form-group">
+                        <label>E-mail</label>
+                        <input type="email" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label>Senha</label>
+                        <input type="password" placeholder="">
+                    </div>
+                    <div class="login-buttons">
+                        <a href="#dashboard" class="btn btn-dark">Acessar</a>
+                        <a href="#cadastro" class="btn btn-light">Adicionar conta</a>
+                    </div>
+                </form>
+            </div>
+            <div class="login-right">
+                <div class="decorative-shape"></div>
+                <img src="imgb.png" alt="Estudante com livros" style="max-width:100%; max-height:500px; object-fit:contain; border-radius:12px;">
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CADASTRO PAGE ========== -->
+    <section class="page" id="cadastro">
+        <header class="header">
+            <a href="#menu" class="menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+            <div class="logo">
+                <i class="fas fa-book-open"></i>
+                <span class="logo-text">BIBLIOTECA<br>VIRTUAL</span>
+            </div>
+        </header>
+
+        <div class="cadastro-container">
+            <div class="cadastro-box">
+                <h1 class="cadastro-title">CADASTRO DE USUÁRIO</h1>
+                <div class="cadastro-buttons">
+                    <a href="#cadastro-aluno" class="cadastro-btn">Aluno</a>
+                    <a href="#cadastro-monitor" class="cadastro-btn">Monitor</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CADASTRO ALUNO PAGE ========== -->
+    <section class="page" id="cadastro-aluno">
+        <header class="header">
+            <a href="#menu" class="menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+            <div class="logo">
+                <i class="fas fa-book-open"></i>
+                <span class="logo-text">BIBLIOTECA<br>VIRTUAL</span>
+            </div>
+        </header>
+
+        <div class="form-container">
+            <div class="form-box">
+                <h1 class="form-title">CADASTRO DE ALUNO</h1>
+                <form>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>nome</label>
+                            <input type="text">
+                        </div>
+                        <div class="form-group">
+                            <label>turma</label>
+                            <input type="text">
+                        </div>
+                        <div class="form-group">
+                            <label>telefone</label>
+                            <input type="tel">
+                        </div>
+                        <div class="form-group">
+                            <label>ano</label>
+                            <input type="text">
+                        </div>
+                        <div class="form-group">
+                            <label>matrícula</label>
+                            <input type="text">
+                        </div>
+                        <div class="form-group">
+                            <label>endereço</label>
+                            <input type="text">
+                        </div>
+                        <div class="form-group">
+                            <label>curso</label>
+                            <input type="text">
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <a href="#dashboard" class="btn btn-success">cadastrar</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CADASTRO MONITOR PAGE ========== -->
+    <section class="page" id="cadastro-monitor">
+        <header class="header">
+            <a href="#menu" class="menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+            <div class="logo">
+                <i class="fas fa-book-open"></i>
+                <span class="logo-text">BIBLIOTECA<br>VIRTUAL</span>
+            </div>
+        </header>
+
+        <div class="form-container">
+            <div class="form-box">
+                <h1 class="form-title">CADASTRO DE MONITOR</h1>
+                <form>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>E-mail</label>
+                            <input type="email">
+                        </div>
+                        <div class="form-group">
+                            <label>Nome</label>
+                            <input type="text">
+                        </div>
+                        <div class="form-group">
+                            <label>Senha</label>
+                            <input type="password">
+                        </div>
+                        <div class="form-group">
+                            <label>Matrícula</label>
+                            <input type="text">
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <a href="#dashboard" class="btn btn-success">Adicionar conta</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== DASHBOARD PAGE ========== -->
+    <section class="page" id="dashboard">
+        <header class="header">
+            <a href="#menu" class="menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+            <div class="logo">
+                <i class="fas fa-book-open"></i>
+                <span class="logo-text">BIBLIOTECA<br>VIRTUAL</span>
+            </div>
+        </header>
+
+        <div class="dashboard-container">
+            <div class="dashboard-left">
+                <div class="search-box">
+                    <input type="text" class="search-input" placeholder="Pesquise algo...">
+                    <div class="search-suggestions">
+                        <p>Livro "a hora da estrela"</p>
+                        <p>O livro de sherlock holmes tem disponível?</p>
+                        <p>Tem o livro assim que acaba?</p>
+                    </div>
+                </div>
+                <div class="nav-buttons">
+                    <a href="#livros" class="nav-btn">LIVROS</a>
+                    <a href="#reservas" class="nav-btn">LIVROS RESERVADOS</a>
+                    <a href="#usuarios" class="nav-btn">USUÁRIOS</a>
+                </div>
+            </div>
+            <div class="dashboard-right">
+                <div class="user-panel">
+                    <div class="user-panel-title">MINHA CONTA</div>
+                    <a href="#login" class="logout-link">Sair</a>
+                    <div class="user-info">
+                        <div class="user-details">
+                            <div class="user-name">Juliana Satiro</div>
+                            <div class="user-role">biblioteca EEEP DR. José Iran Costa</div>
+                        </div>
+                        <div class="user-avatar"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== ADMIN PAGE ========== -->
+    <section class="page" id="admin">
+        <header class="header">
+            <a href="#menu" class="menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+            <div class="logo">
+                <i class="fas fa-book-open"></i>
+                <span class="logo-text">BIBLIOTECA<br>VIRTUAL</span>
+            </div>
+        </header>
+
+        <div class="admin-container">
+            <aside class="admin-sidebar">
+                <h2 class="admin-sidebar-title">CONFIGURAÇÃO</h2>
+                <ul class="admin-menu">
+                    <li><a href="#cadastro"><i class="fas fa-user-plus"></i> Adicionar conta</a></li>
+                    <li><a href="#usuarios"><i class="fas fa-users"></i> Alunos</a></li>
+                    <li><a href="#livros"><i class="fas fa-book"></i> Livros</a></li>
+                    <li><a href="#reservas"><i class="fas fa-calendar"></i> Reservas</a></li>
+                    <li><a href="#cadastrar-editora"><i class="fas fa-building"></i> Cadastrar editora</a></li>
+                    <li><a href="#dashboard"><i class="fas fa-home"></i> Início</a></li>
+                </ul>
+            </aside>
+            <div class="admin-content">
+                <div class="admin-cards">
+                    <a href="#reservas" class="admin-card">LIVROS<br>RESERVADOS</a>
+                    <a href="#livros" class="admin-card">LIVROS<br>DISPONÍVEIS</a>
+                </div>
+            </div>
+            <div class="dashboard-right">
+                <div class="user-panel">
+                    <div class="user-panel-title">MINHA CONTA</div>
+                    <a href="#login" class="logout-link">Sair</a>
+                    <div class="user-info">
+                        <div class="user-details">
+                            <div class="user-name">Juliana Satiro</div>
+                            <div class="user-role">biblioteca EEEP DR. José Iran Costa</div>
+                        </div>
+                        <div class="user-avatar"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== LIVROS PAGE ========== -->
+    <section class="page" id="livros">
+        <header class="header">
+            <a href="#menu" class="menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+            <div class="logo">
+                <i class="fas fa-book-open"></i>
+                <span class="logo-text">BIBLIOTECA<br>VIRTUAL</span>
+            </div>
+        </header>
+
+        <div class="page-content">
+            <h1 class="page-title">LIVROS</h1>
+            <div style="margin: 20px 0;">
+                <span class="genre-tag">Gêneros</span>
+            </div>
+            <div>
+                <a href="#livros-romance" class="genre-btn">ROMANCE</a>
+                <a href="#livros-romance" class="genre-btn">LITERÁRIOS</a>
+                <a href="#livros-romance" class="genre-btn">MISTÉRIO</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== LIVROS ROMANCE PAGE ========== -->
+    <section class="page" id="livros-romance">
+        <header class="header">
+            <a href="#menu" class="menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+            <div class="logo">
+                <i class="fas fa-book-open"></i>
+                <span class="logo-text">BIBLIOTECA<br>VIRTUAL</span>
+            </div>
+        </header>
+
+        <div class="page-content">
+            <h1 class="page-title">LIVROS</h1>
+            <div style="margin: 20px 0;">
+                <span class="genre-tag">Gêneros</span>
+                <span class="genre-tag">ROMANCE</span>
+            </div>
+            
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Pesquise um livro...">
+            </div>
+
+            <div class="book-card">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20de%20tela%202026-05-22%20193628-Fr9u4c6enBwn289sJWmbXVUzVaHToJ.png" alt="Melhor do que nos filmes" class="book-cover" style="width: 100px; height: 150px; object-fit: cover; object-position: left;">
+                <div class="book-info">
+                    <p class="book-title"><strong>Nome:</strong> melhor do que nos filmes</p>
+                    <p class="book-author"><strong>Autor:</strong> Lynn Painter</p>
+                    <p class="book-status"><strong>Situação:</strong> disponível</p>
+                    <div class="book-actions">
+                        <a href="#" class="card-btn card-btn-secondary">Reservar</a>
+                        <a href="#livro-detalhe" class="card-btn card-btn-primary">Ver mais</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== LIVRO DETALHE PAGE ========== -->
+    <section class="page" id="livro-detalhe">
+        <header class="header">
+            <a href="#menu" class="menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+            <div class="logo">
+                <i class="fas fa-book-open"></i>
+                <span class="logo-text">BIBLIOTECA<br>VIRTUAL</span>
+            </div>
+        </header>
+
+        <div class="detail-container">
+            <a href="#livros-romance" class="back-btn"><i class="fas fa-arrow-left"></i></a>
+            
+            <div class="detail-card">
+                <div class="detail-header">
+                    <div class="detail-avatar"></div>
+                    <div class="detail-info">
+                        <p><strong>Nome:</strong> Ana Silva</p>
+                        <p><strong>Ano:</strong></p>
+                        <p><strong>Edição:</strong></p>
+                        <p><strong>Sinopse:</strong></p>
+                        <p><strong>Autor:</strong></p>
+                        <p><strong>Gênero:</strong></p>
+                    </div>
+                </div>
+                <div class="detail-actions">
+                    <button class="detail-btn detail-btn-light"><i class="fas fa-trash"></i> EXCLUIR</button>
+                    <button class="detail-btn detail-btn-light"><i class="fas fa-edit"></i> EDITAR</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CADASTRAR LIVRO PAGE ========== -->
+    <section class="page" id="cadastrar-livro">
+        <header class="header" style="background-color: #2d5a2d;">
+            <a href="#menu" class="menu-btn">
+                <span style="background-color: white;"></span>
+                <span style="background-color: white;"></span>
+                <span style="background-color: white;"></span>
+            </a>
+            <div class="logo">
+                <i class="fas fa-book-open" style="color: white;"></i>
+                <span class="logo-text" style="color: white;">BIBLIOTECA<br>VIRTUAL</span>
+            </div>
+            <span style="color: white; margin-left: 20px; font-weight: bold; border: 2px solid #9370DB; padding: 5px 15px;">CADASTRAR LIVRO</span>
+        </header>
+
+        <div class="form-container">
+            <div class="form-box">
+                <h1 class="form-title">CADASTRAR LIVRO</h1>
+                <form>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Nome</label>
+                            <input type="text">
+                        </div>
+                        <div class="form-group">
+                            <label>Autor</label>
+                            <input type="text">
+                        </div>
+                        <div class="form-group">
+                            <label>Ano</label>
+                            <input type="text">
+                        </div>
+                        <div class="form-group">
+                            <label>Gênero</label>
+                            <input type="text">
+                        </div>
+                        <div class="form-group">
+                            <label>Edição</label>
+                            <input type="text">
+                        </div>
+                        <div class="form-group">
+                            <label>Editora</label>
+                            <input type="text">
+                        </div>
+                        <div class="form-group full-width">
+                            <label>Sinopse</label>
+                            <textarea rows="4" style="width: 100%; padding: 12px; border: none; border-radius: 8px; background-color: #2d5a2d; color: white;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <a href="#livros" class="btn btn-success">Cadastrar</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== USUARIOS PAGE ========== -->
+    <section class="page" id="usuarios">
+        <header class="header">
+            <a href="#menu" class="menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+            <div class="logo">
+                <i class="fas fa-book-open"></i>
+                <span class="logo-text">BIBLIOTECA<br>VIRTUAL</span>
+            </div>
+        </header>
+
+        <div class="page-content">
+            <div class="page-header">
+                <h1 class="page-title">USUÁRIOS</h1>
+                <a href="#cadastro" class="btn btn-success">CADASTRAR USUÁRIO</a>
+            </div>
+
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Pesquise um usuário...">
+            </div>
+
+            <div class="card-list">
+                <div class="card">
+                    <div class="card-avatar"></div>
+                    <div class="card-content">
+                        <p class="card-name"><strong>Nome:</strong> Ana Silva</p>
+                        <p class="card-info"><strong>Turma:</strong> 3 "C"</p>
+                        <div class="monitor-badge"><i class="fas fa-users"></i> Monitor</div>
+                    </div>
+                    <div class="card-actions">
+                        <a href="#usuario-detalhe" class="card-btn card-btn-primary">Ver mais</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-avatar"></div>
+                    <div class="card-content">
+                        <p class="card-name"><strong>Nome:</strong> Ana Silva</p>
+                        <p class="card-info"><strong>Turma:</strong> 3 "C"</p>
+                    </div>
+                    <div class="card-actions">
+                        <a href="#usuario-detalhe" class="card-btn card-btn-primary">Ver mais</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== USUARIO DETALHE PAGE ========== -->
+    <section class="page" id="usuario-detalhe">
+        <header class="header">
+            <a href="#menu" class="menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+            <div class="logo">
+                <i class="fas fa-book-open"></i>
+                <span class="logo-text">BIBLIOTECA<br>VIRTUAL</span>
+            </div>
+        </header>
+
+        <div class="detail-container">
+            <a href="#usuarios" class="back-btn"><i class="fas fa-arrow-left"></i></a>
+            
+            <div class="detail-card">
+                <div class="detail-header">
+                    <div class="detail-avatar"></div>
+                    <div class="detail-info">
+                        <p><strong>Nome:</strong> Ana Silva</p>
+                        <p><strong>Curso:</strong></p>
+                        <p><strong>Série:</strong></p>
+                        <p><strong>Ano:</strong></p>
+                        <p><strong>Matrícula:</strong></p>
+                        <p><strong>E-mail:</strong></p>
+                    </div>
+                </div>
+                <div class="detail-actions">
+                    <button class="detail-btn detail-btn-light"><i class="fas fa-trash"></i> EXCLUIR</button>
+                    <button class="detail-btn detail-btn-light"><i class="fas fa-edit"></i> EDITAR</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== EDITORAS PAGE ========== -->
+    <section class="page" id="editoras">
+        <header class="header">
+            <a href="#menu" class="menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+            <div class="logo">
+                <i class="fas fa-book-open"></i>
+                <span class="logo-text">BIBLIOTECA<br>VIRTUAL</span>
+            </div>
+        </header>
+
+        <div class="page-content">
+            <div class="page-header">
+                <h1 class="page-title">EDITORAS</h1>
+                <a href="#cadastrar-editora" class="btn btn-success">CADASTRAR EDITORA</a>
+            </div>
+
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Pesquise uma editora...">
+            </div>
+
+            <div class="card-list">
+                <div class="card">
+                    <div class="card-avatar"></div>
+                    <div class="card-content">
+                        <p class="card-name">POSITIVO</p>
+                        <p class="card-info"><strong>Nome Fantasia:</strong></p>
+                        <p class="card-info"><strong>CNPJ:</strong> 00.000.000/0001-00</p>
+                    </div>
+                    <div class="card-actions">
+                        <a href="#editora-detalhe" class="card-btn card-btn-primary">Ver mais</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-avatar"></div>
+                    <div class="card-content">
+                        <p class="card-name">POSITIVO</p>
+                        <p class="card-info"><strong>Nome Fantasia:</strong></p>
+                        <p class="card-info"><strong>CNPJ:</strong> 00.000.000/0001-00</p>
+                    </div>
+                    <div class="card-actions">
+                        <a href="#editora-detalhe" class="card-btn card-btn-primary">Ver mais</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== EDITORA DETALHE PAGE ========== -->
+    <section class="page" id="editora-detalhe">
+        <header class="header">
+            <a href="#menu" class="menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+            <div class="logo">
+                <i class="fas fa-book-open"></i>
+                <span class="logo-text">BIBLIOTECA<br>VIRTUAL</span>
+            </div>
+        </header>
+
+        <div class="detail-container">
+            <a href="#editoras" class="back-btn"><i class="fas fa-arrow-left"></i></a>
+            
+            <div class="detail-card">
+                <div class="detail-header">
+                    <div class="detail-avatar"></div>
+                    <div class="detail-info">
+                        <p><strong>Nome:</strong></p>
+                        <p><strong>CNPJ:</strong></p>
+                        <p><strong>E-mail:</strong></p>
+                    </div>
+                </div>
+                <div class="detail-actions">
+                    <button class="detail-btn detail-btn-light"><i class="fas fa-trash"></i> EXCLUIR</button>
+                    <button class="detail-btn detail-btn-light"><i class="fas fa-edit"></i> EDITAR</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CADASTRAR EDITORA PAGE ========== -->
+    <section class="page" id="cadastrar-editora">
+        <header class="header">
+            <a href="#menu" class="menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+            <div class="logo">
+                <i class="fas fa-book-open"></i>
+                <span class="logo-text">BIBLIOTECA<br>VIRTUAL</span>
+            </div>
+        </header>
+
+        <div class="form-container">
+            <div class="form-box">
+                <h1 class="form-title">CADASTRAR EDITORA</h1>
+                <form>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Nome</label>
+                            <input type="text">
+                        </div>
+                        <div class="form-group">
+                            <label>Nome Fantasia</label>
+                            <input type="text">
+                        </div>
+                        <div class="form-group">
+                            <label>CNPJ</label>
+                            <input type="text">
+                        </div>
+                        <div class="form-group">
+                            <label>E-mail</label>
+                            <input type="email">
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <a href="#editoras" class="btn btn-success">Cadastrar</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== RESERVAS PAGE ========== -->
+    <section class="page" id="reservas">
+        <header class="header">
+            <a href="#menu" class="menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+            <div class="logo">
+                <i class="fas fa-book-open"></i>
+                <span class="logo-text">BIBLIOTECA<br>VIRTUAL</span>
+            </div>
+        </header>
+
+        <div class="page-content">
+            <div class="page-header">
+                <h1 class="page-title">LIVROS EM RESERVA</h1>
+                <a href="#cadastrar-reserva" class="btn btn-success">CADASTRAR RESERVA</a>
+            </div>
+
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Pesquise um livro...">
+            </div>
+
+            <div class="card-list">
+                <div class="card">
+                    <div class="card-avatar"></div>
+                    <div class="card-content">
+                        <p class="card-name"><strong>Nome:</strong> Ana Silva</p>
+                        <p class="card-info"><strong>Turma:</strong> 3 "C"</p>
+                        <p class="card-info"><strong>livro:</strong> é assim que acaba</p>
+                        <p class="card-info"><strong>data de reserva:</strong> 12/02/2026</p>
+                    </div>
+                    <div class="card-actions">
+                        <span style="font-size: 14px; color: #666;">Situação</span>
+                        <span class="status-badge status-pending">Pendente</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-avatar"></div>
+                    <div class="card-content">
+                        <p class="card-name"><strong>Nome:</strong> Ana Silva</p>
+                        <p class="card-info"><strong>Turma:</strong> 3 "C"</p>
+                        <p class="card-info"><strong>livro:</strong> é assim que acaba</p>
+                        <p class="card-info"><strong>data de reserva:</strong> 12/02/2026</p>
+                    </div>
+                    <div class="card-actions">
+                        <span style="font-size: 14px; color: #666;">Situação</span>
+                        <span class="status-badge status-pending">Pendente</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CADASTRAR RESERVA PAGE ========== -->
+    <section class="page" id="cadastrar-reserva">
+        <header class="header">
+            <a href="#menu" class="menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+            <div class="logo">
+                <i class="fas fa-book-open"></i>
+                <span class="logo-text">BIBLIOTECA<br>VIRTUAL</span>
+            </div>
+        </header>
+
+        <div class="form-container">
+            <div class="form-box">
+                <h1 class="form-title">CADASTRAR RESERVA</h1>
+                <form>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Aluno</label>
+                            <select>
+                                <option>Selecione um aluno</option>
+                                <option>Ana Silva</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Livro</label>
+                            <select>
+                                <option>Selecione um livro</option>
+                                <option>É assim que acaba</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Data de Reserva</label>
+                            <input type="date">
+                        </div>
+                        <div class="form-group">
+                            <label>Data de Devolução</label>
+                            <input type="date">
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <a href="#reservas" class="btn btn-success">Cadastrar</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== MINHA CONTA PAGE ========== -->
+    <section class="page" id="minha-conta">
+        <header class="header">
+            <a href="#menu" class="menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+            <div class="logo">
+                <i class="fas fa-book-open"></i>
+                <span class="logo-text">BIBLIOTECA<br>VIRTUAL</span>
+            </div>
+        </header>
+
+        <div class="detail-container">
+            <a href="#dashboard" class="back-btn"><i class="fas fa-arrow-left"></i></a>
+            
+            <div class="detail-card" style="max-width: 600px;">
+                <div class="detail-header">
+                    <div class="detail-avatar" style="width: 100px; height: 100px;"></div>
+                    <div class="detail-info">
+                        <h2 style="margin-bottom: 15px;">Minha Conta</h2>
+                        <p><strong>Nome:</strong> Juliana Satiro</p>
+                        <p><strong>E-mail:</strong> juliana@escola.com</p>
+                        <p><strong>Cargo:</strong> Monitor</p>
+                        <p><strong>Biblioteca:</strong> EEEP DR. José Iran Costa</p>
+                    </div>
+                </div>
+                <div class="detail-actions">
+                    <button class="detail-btn detail-btn-light"><i class="fas fa-edit"></i> EDITAR</button>
+                    <a href="#login" class="detail-btn detail-btn-light"><i class="fas fa-sign-out-alt"></i> SAIR</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
